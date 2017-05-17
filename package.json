@@ -1,0 +1,18 @@
+{
+  "name": "ViziApp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "pack": "build --dir",
+    "dist": "build",
+    "bb": "node_modules/.bin/build --win --ia32"
+  },
+  "author": "seb",
+  "license": "ISC",
+  "dependencies": {
+  },
+  "build": {
+    "appId": "testApp"
+  }
+}
