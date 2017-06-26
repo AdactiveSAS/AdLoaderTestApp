@@ -1,18 +1,27 @@
 {
-  "name": "ViziApp",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "AdLoaderTestApp",
+  "version": "1.0.2",
+  "description": "3d map app application for monitoring purpose called adloadertestapp",
+  "main": "electron.js",
   "scripts": {
-    "pack": "build --dir",
-    "dist": "build",
-    "bb": "node_modules/.bin/build --win --ia32"
+    "start": "electron ./electron.js",
+    "build": "electron-packager . --overwrite --asar=true --electron-version=1.6.10 --platform=win32 --arch=x64 --icon=assets/icon.png --prune=true --out=build",
+    "install": "node createinstaller.js",
+    "package": "npm run build && npm run install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AdactiveSAS/AdLoaderTestApp.git"
   },
   "author": "seb",
   "license": "ISC",
   "dependencies": {
+    "electron": "^1.6.10",
+    "electron-packager": "^8.7.1",
+    "electron-prebuilt": "^1.4.13",
+    "electron-squirrel-startup": "^1.0.0"
   },
-  "build": {
-    "appId": "testApp"
+  "devDependencies": {
+    "electron-winstaller": "^2.5.2"
   }
 }

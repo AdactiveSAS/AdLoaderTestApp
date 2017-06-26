@@ -1,4 +1,3 @@
-
 // Manhattan
 var coords = [40.739940, -73.988801];
 
@@ -16,8 +15,6 @@ VIZI.imageTileLayer('http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}
 }).addTo(world);
 
 // Buildings from Mapzen
-
-
 VIZI.topoJSONTileLayer('https://vector.mapzen.com/osm/buildings/{z}/{x}/{y}.topojson?api_key=vector-tiles-NT5Emiw', {
   interactive: false,
   style: function (feature) {
@@ -43,7 +40,7 @@ VIZI.topoJSONTileLayer('https://vector.mapzen.com/osm/buildings/{z}/{x}/{y}.topo
 
 
 $("#Paris").click(function () {
-
+  log.info('Hello, log');
   world._controls[0].flyToLatLon(new VIZI.latLon(48.866002, 2.326264), 10)
 });
 $("#Singapore").click(function () {
