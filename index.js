@@ -1,6 +1,8 @@
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
 
+const ipc = require('./ipcclient');
+
 if(require('electron-squirrel-startup')) return;
 
 require('electron-debug')({showDevTools: true});
