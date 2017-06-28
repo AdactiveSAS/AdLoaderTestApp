@@ -1,14 +1,23 @@
 const { app, BrowserWindow } = require('electron');
-
-const setupEvents = require('./setupSquirrel')
-
-if (setupEvents.handleSquirrelEvent()) {
-  return;
-}
-
-
 const path = require('path');
+
+if(require('electron-squirrel-startup')) return;
+
+require('electron-debug')({showDevTools: true});
+
+
+
+const handleSquirrelEvent = require('./setupSquirrel');
+if (handleSquirrelEvent(app))
+  return;
+
+const registerEvents = require('./setupSquirrel0')
+//register events
+registerEvents.register();
+
+
 const pathtoindex = 'src/index.html';
+
 let mainWindow;
 
 function createWindow() {

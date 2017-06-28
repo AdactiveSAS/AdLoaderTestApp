@@ -2,6 +2,8 @@ const createWindowsInstaller = require('electron-winstaller').createWindowsInsta
 const path = require('path')
 var pjson = require('./package.json');
 
+//https://github.com/electron/windows-installer
+
 console.log("Create Installer ");
 console.log("-- Application name :  " + pjson.name);
 console.log("-- Application version :  " + pjson.version);
@@ -19,12 +21,12 @@ function getInstallerConfig () {
   const rootPath = path.join('./')
 
   return Promise.resolve({
-    appDirectory: path.join(rootPath, 'build/ClientApplication-win32-x64'),
+    appDirectory: path.join(rootPath, 'build/'+pjson.name+'-win32-x64'),
     authors: pjson.author,
     noMsi: true,
     outputDirectory: path.join(rootPath, 'installers'),
     exe: pjson.name +'.exe',
-    setupExe: 'Installer.exe',
+    setupExe: 'installer.exe',
     setupIcon: path.join(rootPath, 'assets', 'icon.ico')
   })
 }

@@ -8,3 +8,6 @@ npm-debug.log
 /.idea
 ClientApplication/builds/
 ClientApplication/installers/
+build/
+installers/AdLoaderTestApp-1.0.4-full.nupkg
+installers/
