@@ -16,7 +16,7 @@
   "author": "seb",
   "license": "ISC",
   "dependencies": {
-    "electron": "1.3.3",
+    "electron": "42.11.16",
     "electron-debug": "^1.2.0",
     "electron-packager": "^8.7.1",
     "electron-prebuilt": "^1.4.13",
